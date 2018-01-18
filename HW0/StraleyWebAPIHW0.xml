@@ -1,0 +1,32 @@
+<movies>
+	<movie>
+		<title>"Ponyo"</title>
+		<year>2008</year>
+		<genre>Adventure</genre>
+		<actors>
+			<actor>
+				<name>"Yuria Nana"</name>
+				<DateOfBirth>1999-12-21</DateOfBirth>
+			</actor>
+			<actor>
+				<name>"Hiroki Doi"</name>
+				<DateOfBirth>1999-08-10</DateOfBirth>
+			</actor>
+		</actors>
+	</movie>
+	<movie>
+		<title>"Fight Club"</title>
+		<year>1999</year>
+		<genre>Drama</genre>
+		<actors>
+			<actor>
+				<name>"Edward Norton"</name>
+				<DateOfBirth>1969-08-18</DateOfBirth>
+			</actor>
+			<actor>
+				<name>"Brad Pitt"</name>
+				<DateOfBirth>1963-12-18</DateOfBirth>
+			</actor>
+		</actors>
+	</movie>
+</movies>

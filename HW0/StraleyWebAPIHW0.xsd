@@ -1,0 +1,51 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="movies" >
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="movie" maxOccurs="unbounded" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="title"/>
+              <xs:element name="year">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:pattern value="\d{4}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			  </xs:element>
+              <xs:element name="genre">
+			    <xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Action"/>
+						<xs:enumeration value="Adventure"/>
+						<xs:enumeration value="Comedy"/>
+						<xs:enumeration value="Drama"/>
+						<xs:enumeration value="Fantasy"/>
+						<xs:enumeration value="Horror"/>
+						<xs:enumeration value="Mystery"/>
+						<xs:enumeration value="Thriller"/>
+						<xs:enumeration value="Western"/>
+					</xs:restriction>
+				</xs:simpleType>
+			  </xs:element>
+              <xs:element name="actors">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="actor" maxOccurs="unbounded" minOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="name"/>
+                          <xs:element type="xs:date" name="DateOfBirth"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
