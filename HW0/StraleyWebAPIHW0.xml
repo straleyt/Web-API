@@ -1,4 +1,5 @@
-<movies>
+<?xml version="1.0"?>
+<movies xsi:schemaLocation="https://github.com/straleyt/Web-API/blob/master/HW0/StraleyWebAPIHW0.xsd">
 	<movie>
 		<title>"Ponyo"</title>
 		<year>2008</year>
