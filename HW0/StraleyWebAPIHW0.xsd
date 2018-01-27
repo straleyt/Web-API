@@ -5,7 +5,7 @@
         <xs:element name="movie" maxOccurs="unbounded" minOccurs="1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element type="xs:string" name="title"/>
+              <xs:element type="xs:string" name="title" minOccurs="1" maxOccurs="1"/>
               <xs:element name="year">
 				<xs:simpleType>
 					<xs:restriction base="xs:int">
@@ -34,7 +34,7 @@
                     <xs:element name="actor" maxOccurs="unbounded" minOccurs="1">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element type="xs:string" name="name"/>
+                          <xs:element type="xs:string" name="name" minOccurs="1" maxOccurs="1" />
                           <xs:element type="xs:date" name="DateOfBirth"/>
                         </xs:sequence>
                       </xs:complexType>
