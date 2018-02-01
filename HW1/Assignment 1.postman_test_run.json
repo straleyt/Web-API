@@ -1,0 +1,183 @@
+{
+	"id": "c7900a4e-c973-401a-b736-e4a42dab8806",
+	"name": "Assignment 1",
+	"allTests": [],
+	"timestamp": "2018-01-31T23:35:42.758Z",
+	"collection_id": "34c6e4fe-994c-6dd1-1537-e06868eece19",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "fac68a82-2045-ce93-5c71-955861f7f68b",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "34c6e4fe-994c-6dd1-1537-e06868eece19",
+		"name": "Assignment 1",
+		"description": "",
+		"order": [
+			"c9e10045-df07-0187-8998-110f996247ee",
+			"f864ed12-3d4f-6b05-bfe7-56d4b4a562d4"
+		],
+		"folders": [],
+		"folders_order": [],
+		"timestamp": 1516987102460,
+		"synced": false,
+		"remote_id": 0,
+		"owner": "2793397",
+		"sharedWithTeam": false,
+		"subscribed": false,
+		"remoteLink": "",
+		"remoteLinkUpdatedAt": null,
+		"public": false,
+		"createdAt": 1516987102460,
+		"updatedAt": 1517069930144,
+		"write": true,
+		"published": false,
+		"favorite": true,
+		"permissions": {},
+		"syncedPermissions": {},
+		"events": [],
+		"variables": [],
+		"auth": null
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"name": "Get Turing books",
+			"id": "c9e10045-df07-0187-8998-110f996247ee",
+			"url": "https://www.googleapis.com/books/v1/volumes?q=Turing",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status Code is 200": true,
+				"Titles have Turing": true
+			},
+			"testPassFailCounts": {
+				"Status Code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Titles have Turing": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"299"
+			],
+			"allTests": [
+				{
+					"Status Code is 200": true,
+					"Titles have Turing": true
+				}
+			],
+			"time": "299",
+			"totalRequestTime": "299",
+			"iterationResults": {}
+		},
+		{
+			"name": "Part 2 book id request",
+			"id": "f864ed12-3d4f-6b05-bfe7-56d4b4a562d4",
+			"url": "https://www.googleapis.com/books/v1/volumes/?q=VlC5MkVIwqkC",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Book 0 has id of environment variable": true,
+				"Status Code is 200": true
+			},
+			"testPassFailCounts": {
+				"Book 0 has id of environment variable": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status Code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"296"
+			],
+			"allTests": [
+				{
+					"Book 0 has id of environment variable": true,
+					"Status Code is 200": true
+				}
+			],
+			"time": "296",
+			"totalRequestTime": "296",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 4,
+	"totalFail": 0,
+	"totalTime": 595,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "Get Turing books",
+			"id": "c9e10045-df07-0187-8998-110f996247ee",
+			"url": "https://www.googleapis.com/books/v1/volumes?q=Turing",
+			"time": "2018-01-31T23:35:42.758Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status Code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Titles have Turing": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Part 2 book id request",
+			"id": "f864ed12-3d4f-6b05-bfe7-56d4b4a562d4",
+			"url": "https://www.googleapis.com/books/v1/volumes/?q=VlC5MkVIwqkC",
+			"time": "2018-01-31T23:35:42.758Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Book 0 has id of environment variable": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status Code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}

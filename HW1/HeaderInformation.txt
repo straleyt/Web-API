@@ -1,0 +1,50 @@
+Review the HTTP Headers in the Request and Response 
+– create text file and describe each key value pair
+ in the HTTP header in both request and response and
+ check it in with the project to GitHub (e.g. what is
+ the content-type and what does it mean?)
+
+ Alt-Svc ?hq=":443"; ma=2592000; quic=51303431; quic=51303339; quic=51303338; quic=51303337; quic=51303335,quic=":443"; ma=2592000; v="41,39,38,37,35"
+meaning alternative service, where else the request can be found.
+
+Cache-Control ?private, max-age=0, must-revalidate, no-transform
+meaning cache rules. Private connection, since max-age is 0 the request (no matter what) must 
+receive the request from the server.
+
+Content-Encoding ?gzip
+meaning the http can be in a gzip 
+
+Content-Type ?application/json; charset=UTF-8
+meaning Base64-encoded binary MD5 sum of the content of the request body
+
+Date ?Tue, 30 Jan 2018 21:07:42 GMT
+the time and date the message was originated
+
+ETag ?"f6QLsd8inUgRKJVNBqJ8xHnPb0w/qf7Fg2SYRIoio4sScrD5jq-Aiso"
+is an identifier for a specific version of a resouce
+
+Expires ?Tue, 30 Jan 2018 21:07:42 GMT
+Time and date when the request expires and the request has to go all the way to server
+
+Server ?GSE
+the name of the software or product that handles the requests. In our case, GSE.
+
+Transfer-Encoding ?chunked
+specified the form of encoding used to safely transfer the entitiy to the user. 
+
+Vary ?Origin
+determines how to match future request headers to decide whether a cached
+response can be used rather than requesting a fresh one from the origin server. 
+
+Vary ?X-Origin
+determines how to match future request headers to decide whether a cached
+response can be used rather than requesting a fresh one from the origin server. 
+
+X-Content-Type-Options ?nosniff
+prevents mime based attacks. The nosniff option: the server says the content is text/html, 
+the browser will render it as text/html. 
+
+X-Frame-Options ?SAMEORIGIN
+
+
+X-XSS-Protection ?1; mode=block
