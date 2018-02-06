@@ -1,5 +1,5 @@
 Review the HTTP Headers in the Request and Response 
-– create text file and describe each key value pair
+â€“ create text file and describe each key value pair
  in the HTTP header in both request and response and
  check it in with the project to GitHub (e.g. what is
  the content-type and what does it mean?)
@@ -45,6 +45,7 @@ prevents mime based attacks. The nosniff option: the server says the content is 
 the browser will render it as text/html. 
 
 X-Frame-Options ?SAMEORIGIN
-
+used to indicate if a browser should be allowed to render a page
 
 X-XSS-Protection ?1; mode=block
+response header of IE, Chrome, and Safari that stops pages from loading when they detect reflected XSS attacks. 
