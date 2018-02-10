@@ -1,3 +1,7 @@
+//file: server.js
+
+//node_modules required.
+//Packages should be a dependency in the package.json 
 var express = require('express');
 var http = require('http');
 var bodyParser = require('body-parser');
@@ -7,6 +11,7 @@ var authJwtController = require('./auth_jwt');
 db = require('./db')(); //global hack
 var jwt = require('jsonwebtoken');
 
+//Creating the node.js server
 var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -15,6 +20,7 @@ app.use(passport.initialize());
 
 var router = express.Router();
 
+//When using http://localhost:8080/post
 router.route('/post')
     .post(authController.isAuthenticated, function (req, res) {
             console.log(req.body);
@@ -27,6 +33,7 @@ router.route('/post')
         }
     );
 
+//When using http://localhost:8080/postjwt
 router.route('/postjwt')
     .post(authJwtController.isAuthenticated, function (req, res) {
             console.log(req.body);
@@ -39,6 +46,7 @@ router.route('/postjwt')
         }
     );
 
+//When using http://localhost:8080/signup
 router.post('/signup', function(req, res) {
     if (!req.body.username || !req.body.password) {
         res.json({success: false, msg: 'Please pass username and password.'});
@@ -53,6 +61,7 @@ router.post('/signup', function(req, res) {
     }
 });
 
+//When using http://localhost:8080/signin
 router.post('/signin', function(req, res) {
 
         var user = db.findOne(req.body.username);
@@ -73,5 +82,6 @@ router.post('/signin', function(req, res) {
         };
 });
 
+//Important. On port 8080
 app.use('/', router);
 app.listen(process.env.PORT || 8080);
