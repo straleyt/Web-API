@@ -10,6 +10,7 @@ var authController = require('./auth');
 var authJwtController = require('./auth_jwt');
 db = require('./db')(); //global hack
 var jwt = require('jsonwebtoken');
+var port = 8080;
 
 //Creating the node.js server
 var app = express();
@@ -20,8 +21,8 @@ app.use(passport.initialize());
 
 var router = express.Router();
 
-//When using http://localhost:8080/post
-router.route('/post')
+//When using http://localhost:8080/posts
+router.route('/posts')
     .post(authController.isAuthenticated, function (req, res) {
             console.log(req.body);
             res = res.status(200);
@@ -46,8 +47,8 @@ router.route('/postjwt')
         }
     );
 
-//When using http://localhost:8080/signup
-router.post('/signup', function(req, res) {
+//When using http://localhost:8080/gets
+router.post('/gets', function(req, res) {
     if (!req.body.username || !req.body.password) {
         res.json({success: false, msg: 'Please pass username and password.'});
     } else {
@@ -61,8 +62,8 @@ router.post('/signup', function(req, res) {
     }
 });
 
-//When using http://localhost:8080/signin
-router.post('/signin', function(req, res) {
+//When using http://localhost:8080/deletes
+router.post('/deletes', function(req, res) {
 
         var user = db.findOne(req.body.username);
 
@@ -84,4 +85,5 @@ router.post('/signin', function(req, res) {
 
 //Important. On port 8080
 app.use('/', router);
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || port);
+console.log("Server listening on port " + port);
