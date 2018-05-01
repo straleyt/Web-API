@@ -1,5 +1,5 @@
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="movies" >
+  <xs:element name="movies" minOccurs="1">
     <xs:complexType>
       <xs:sequence>
         <xs:element name="movie" maxOccurs="unbounded" minOccurs="1">
@@ -28,7 +28,7 @@
 					</xs:restriction>
 				</xs:simpleType>
 			  </xs:element>
-              <xs:element name="actors">
+              <xs:element name="actors" minOccurs="1">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="actor" maxOccurs="unbounded" minOccurs="1">
